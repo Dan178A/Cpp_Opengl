@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "C/C++: g++.exe build active file",
+      "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-g",
+        "-std=c++17",
+        // ISSUE: problem in some OS regarding "fatal error: glad/glad.h not found."
+        // SOL.: use the workspace directory path variable here:
+        "-I C:\\Users\\dsrgl\\Documents\\GitHub\\Cpp_Opengl\\include",
+        "-L C:\\Users\\dsrgl\\Documents\\GitHub\\Cpp_Opengl\\lib",
+        "C:\\Users\\dsrgl\\Documents\\GitHub\\Cpp_Opengl\\src\\*.cpp",
+        "C:\\Users\\dsrgl\\Documents\\GitHub\\Cpp_Opengl\\src\\glad.c",
+        "-lglfw3dll",
+        "-o",
+        "C:\\Users\\dsrgl\\Documents\\GitHub\\Cpp_Opengl\\myprogram.exe"
+      ],
+      "options": {
+        "cwd": "C:\\Users\\dsrgl\\Documents\\GitHub\\Cpp_Opengl\\"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
